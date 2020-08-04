@@ -19,7 +19,7 @@ public abstract class MovieDatabase extends RoomDatabase
     {
         if (instance == null)
             instance = Room.databaseBuilder(context.getApplicationContext(),
-                    MovieDatabase.class, "movie_database_mvp")
+                    MovieDatabase.class, "movie_database_viper")
                     .fallbackToDestructiveMigration()
                     .build();
 

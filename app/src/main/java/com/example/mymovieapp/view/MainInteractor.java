@@ -1,6 +1,7 @@
 package com.example.mymovieapp.view;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MediatorLiveData;
 
 import com.example.mymovieapp.data.model.Movie;
 import com.example.mymovieapp.data.repository.MovieRepository;
@@ -16,7 +17,7 @@ public class MainInteractor implements MainContract.Interactor{
     }
 
     @Override
-    public List<Movie> loadSavedMovies() {
-        return movieRepository.getAllSavedMovies().getValue();
+    public LiveData<List<Movie>> loadSavedMovies() {
+        return movieRepository.getAllSavedMovies();
     }
 }

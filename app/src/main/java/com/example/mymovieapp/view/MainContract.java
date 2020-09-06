@@ -1,6 +1,8 @@
 package com.example.mymovieapp.view;
 
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MediatorLiveData;
 
 import com.example.mymovieapp.data.model.Movie;
 
@@ -10,6 +12,8 @@ public interface MainContract {
 
     interface View {
         void showMessage(String message);
+
+        LifecycleOwner getLifeCycleOwner();
     }
 
     interface Presenter {
@@ -17,7 +21,7 @@ public interface MainContract {
     }
 
     interface Interactor {
-        List<Movie> loadSavedMovies();
+        LiveData<List<Movie>> loadSavedMovies();
     }
 
     interface Router {
